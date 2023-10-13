@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #dddd;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#orologio {
+    background-color: #242045;
+    width: 300px;
+    height: 300px;
+    border-radius: 30px;
+    box-shadow: 10px 10px 30px black,
+        inset 15px 15px 20px rgba(105, 105, 131, 0.835);
+    position: relative;
+}
+
+.numeri {
+    width: 260px;
+    height: 260px;
+    background-color: #47476bdc;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4cap solid rgb(5, 3, 16);
+    box-shadow: 5px 5px 10px black,
+        inset -5px -5px 10px rgba(255, 255, 255, 0.627);
+    color: #d5cdcd;
+}
+
+.numeri div {
+    display: inline;
+    position: absolute;
+    inset: 10px;
+    text-align: center;
+    transform: rotate(calc(30deg * var(--count)));
+}
+.numeri div span {
+    display: inline-block;
+    transform: rotate(calc(-30deg * var(--count)));
+    font-size: 22px;
+}
+
+.lancette {
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+.lancette #ore {
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    border-radius: 50%;
+}
+#ore::after {
+    content: '';
+    width: 8px;
+    height: 90px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 11px;
+    left: 11px;
+    border-radius: 5px;
+}
+
+.lancette #minuti {
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    border-radius: 50%;
+}
+#minuti::after {
+    content: '';
+    width: 8px;
+    height: 123px;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 11px;
+    left: 11px;
+    border-radius: 5px;
+}
+
+.lancette #secondi {
+    width: 30px;
+    height: 30px;
+    background-color: #ffd000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    border-radius: 50%;
+}
+
+#secondi::after {
+    content: '';
+    width: 3px;
+    height: 123px;
+    background-color: #ffd000;
+    position: absolute;
+    bottom: 13px;
+    left: 13px;
+    border-radius: 5px;
+}
+
